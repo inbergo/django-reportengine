@@ -65,6 +65,10 @@ class Report(object):
         # CONSIDER worry about timezone? or just assume Django has this covered?
         raise NotImplementedError("Still an idea in the works")
 
+    # Implement this function if report meta (i.e. labels) depends on parameters
+    def process_params(self, params):
+        pass
+
 class QuerySetReport(Report):
     # TODO make labels more addressable. now fixed to fields in model. what happens with relations?
     labels = None
